@@ -1,2 +1,2 @@
-# boostrap-sample
+# bootstrap-sample
 This is a sample site using bootstrap framework.
