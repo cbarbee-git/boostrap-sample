@@ -1,0 +1,54 @@
+@import "./abstracts/variables";
+
+// Create your own map
+$custom-colors: (
+        "custom-color": #900
+);
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import '~bootstrap/scss/bootstrap';
+
+@include media-breakpoint-up(sm) {
+  .newsletter-input {width:50%;}
+}
+
+/* ------- customize info button color -------- */
+$herobuttonbgcolor:#cf2e2e;
+$herobuttonhovercolor:#ffc107;
+$herobuttontextcolor:#ffffff;
+.btn-info {
+  @include button-variant($herobuttonbgcolor, darken($herobuttonbgcolor, 7.5%), $herobuttontextcolor, darken($herobuttonbgcolor,7.5%), darken($herobuttonbgcolor, 10%), $herobuttonhovercolor)
+//@include button-v
+;
+}
+
+.btn-outline-info {
+  @include button-outline-variant($herobuttonbgcolor, #222222, lighten($herobuttontextcolor,5%), $herobuttonbgcolor);
+}
+.btn-info:active,
+.btn-info.active {
+  //color: $herobuttontextcolor !important;
+}
+
+body::before{
+  display: block;
+  content: '';
+  height: 72px;
+  background-color: $dark;
+}
+#map {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+form.needs-validation label.label-required:after {
+  content:"*";
+  color:red;
+}
